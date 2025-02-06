@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Git Tutorial - Essential Commands and Best Practices</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">Git Tutorial</div>
+        <div class="nav-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="#repository-setup">Repository Setup</a></li>
+            <li><a href="#basic-operations">Basic Operations</a></li>
+            <li><a href="#branching-and-merging">Branching & Merging</a></li>
+            <li><a href="#remote-operations">Remote Operations</a></li>
+            <li><a href="#advanced-features">Advanced Features</a></li>
+            <li><a href="#best-practices">Best Practices</a></li>
+            <li><a href="#troubleshooting">Troubleshooting</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <h1 data-aos="fade-up">Git Tutorial</h1>
+        <p data-aos="fade-up" data-aos-delay="200">Essential Commands and Best Practices</p>
+    </header>
+
+    <main class="content">
+        <section id="repository-setup" class="section" data-aos="fade-up">
+            <h2>Repository Setup</h2>
+            <p>Learn how to initialize and clone Git repositories.</p>
+            <div class="code-block">
+                <pre><code><span class="command">git init</span>                    <span class="comment"># Initialize new repository</span>
+<span class="command">git clone</span> <span class="param"><repository-url></span>   <span class="comment"># Clone existing repository</span></code></pre>
+            </div>
+        </section>
+
+        <section id="basic-operations" class="section" data-aos="fade-up">
+            <h2>Basic Operations</h2>
+            <p>Essential commands for daily Git usage.</p>
+            <div class="code-block">
+                <pre><code><span class="command">git status</span>                  <span class="comment"># Check repository status</span>
+<span class="command">git add</span> <span class="param"><file-name></span>         <span class="comment"># Stage specific file</span>
+<span class="command">git add</span> <span class="param">.</span>                   <span class="comment"># Stage all changes</span>
+<span class="command">git commit</span> <span class="param">-m</span> "message"     <span class="comment"># Commit with message</span>
+<span class="command">git log</span> <span class="param">--oneline</span>          <span class="comment"># View commit history</span></code></pre>
+            </div>
+        </section>
+
+        <section id="branching-and-merging" class="section" data-aos="fade-up">
+            <h2>Branching and Merging</h2>
+            <p>Manage branches and handle code integration.</p>
+            <div class="code-block">
+                <pre><code><span class="command">git branch</span>                  <span class="comment"># List branches</span>
+<span class="command">git checkout</span> <span class="branch"><branch-name></span>  <span class="comment"># Switch to branch</span>
+<span class="command">git merge</span> <span class="branch"><branch-name></span>     <span class="comment"># Merge branch</span>
+<span class="command">git branch</span> <span class="param">-d</span> <span class="branch"><branch-name></span> <span class="comment"># Delete branch</span></code></pre>
+            </div>
+        </section>
+
+        <section id="remote-operations" class="section" data-aos="fade-up">
+            <h2>Remote Operations</h2>
+            <p>Work with remote repositories.</p>
+            <div class="code-block">
+                <pre><code><span class="command">git remote</span> <span class="param">-v</span>               <span class="comment"># List remotes</span>
+<span class="command">git remote add</span> <span class="param"><name> <url></span> <span class="comment"># Add remote</span>
+<span class="command">git push</span> <span class="param">origin</span> <span class="branch"><branch></span>    <span class="comment"># Upload changes</span>
+<span class="command">git pull</span>                    <span class="comment"># Download changes</span></code></pre>
+            </div>
+        </section>
+
+        <section id="advanced-features" class="section" data-aos="fade-up">
+            <h2>Advanced Features</h2>
+            <p>Advanced Git operations for complex scenarios.</p>
+            <div class="code-block">
+                <pre><code><span class="command">git stash</span>                   <span class="comment"># Stash changes</span>
+<span class="command">git tag</span> <span class="param">-a v1.0 -m</span> "msg"    <span class="comment"># Create annotated tag</span>
+<span class="command">git rebase</span> <span class="param">-i</span> <span class="hash">HEAD~n</span>        <span class="comment"># Interactive rebase</span>
+<span class="command">git cherry-pick</span> <span class="hash"><commit></span>    <span class="comment"># Apply specific commit</span></code></pre>
+            </div>
+        </section>
+
+        <section id="best-practices" class="section" data-aos="fade-up">
+            <h2>Best Practices</h2>
+            <p>Guidelines for effective Git usage.</p>
+            <div class="code-block">
+                <pre><code># Commit Message Guidelines
+- Write clear, concise messages
+- Use present tense
+- Keep first line under 50 chars
+
+# Branching Strategy
+- Keep main/master stable
+- Use feature branches
+- Delete merged branches</code></pre>
+            </div>
+        </section>
+
+        <section id="troubleshooting" class="section" data-aos="fade-up">
+            <h2>Troubleshooting</h2>
+            <p>Common issues and their solutions.</p>
+            <div class="code-block">
+                <pre><code>git clean -fd              # Remove untracked files
+git reset --soft HEAD~1     # Undo last commit
+git reflog                 # View reference history
+git fsck --full           # Check repository health</code></pre>
+            </div>
+        </section>
+
+        <section id="git-workflows" class="section" data-aos="fade-up">
+            <h2>Git Workflows</h2>
+            <p>Learn about different Git workflow strategies.</p>
+            <div class="code-block">
+                <pre><code># GitFlow
+git flow init                # Initialize GitFlow
+git flow feature start name  # Start feature
+git flow feature finish name # Finish feature
+
+# Trunk-Based Development
+- Create short-lived branches
+- Merge frequently (daily)
+- Use feature flags
+- High test coverage</code></pre>
+            </div>
+        </section>
+
+        <section id="security" class="section" data-aos="fade-up">
+            <h2>Security Guidelines</h2>
+            <p>Best practices for Git security.</p>
+            <div class="code-block">
+                <pre><code># Repository Security
+- Use .gitignore for sensitive files
+- Implement Git hooks
+- Regular security audits
+
+# Credential Management
+git config --global credential.helper cache
+git config --global commit.gpgsign true</code></pre>
+            </div>
+        </section>
+
+        <section id="advanced-operations" class="section" data-aos="fade-up">
+            <h2>Advanced Operations</h2>
+            <p>Advanced Git features for power users.</p>
+            <div class="code-block">
+                <pre><code># Git Hooks
+.git/hooks/pre-commit
+.git/hooks/pre-push
+
+# Git LFS
+git lfs install
+git lfs track "*.psd"
+git lfs ls-files</code></pre>
+            </div>
+        </section>
+
+        <section id="repository-maintenance" class="section" data-aos="fade-up">
+            <h2>Repository Maintenance</h2>
+            <p>Keep your Git repository healthy and optimized.</p>
+            <div class="code-block">
+                <pre><code># Optimize Repository
+git gc                    # Run garbage collection
+git gc --aggressive      # Aggressive optimization
+git prune               # Remove unreachable objects
+git repack -a -d        # Repack all objects</code></pre>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>Created with ❤️ for Git enthusiasts</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -70,7 +70,7 @@ class BuildConfig:
     def __init__(self, build_type: str = "Debug",
                  compiler: str = "",
                  cpp_standard: str = "20",
-                 generate_assembly: bool = False,
+                 generate_assembly: bool = True,
                  platform_config: Optional[PlatformConfig] = None):
         self.platform = platform_config or PlatformConfig()
         self.build_type = build_type

@@ -2,18 +2,16 @@
 #include <vector>
 #include <string>
 #include <thread>
-#include <mutex>
+#include <atomic>
 
 int threadCount = 100;
 int iterations = 1000000;
 
-int counter = 0;
-
-std::mutex m;
+std::atomic<int> counter = 0;
 
 int main() {
     auto increment = []() {
-        std::lock_guard<std::mutex> g(m);
+
         for (int i = 0; i < iterations; ++i) {
             counter++;
             auto memeSmth = std::to_string(counter);
